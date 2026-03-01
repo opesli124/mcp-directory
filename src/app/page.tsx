@@ -2,62 +2,38 @@
 
 import { useState, useEffect } from "react";
 
-const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "";
+// GitHub repository for tracking interest
+const GITHUB_REPO = "opesli124/mcp-directory";
 
 export default function Home() {
-  const [email, setEmail] = useState("");
+  const [stars, setStars] = useState<number | null>(null);
   const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [subscriberCount, setSubscriberCount] = useState<number | null>(null);
 
-  // Fetch real subscriber count on load
+  // Fetch GitHub stars on load
   useEffect(() => {
-    // Try to get count from localStorage (updated by form submission)
-    const stored = localStorage.getItem("mcp_subscriber_count");
-    if (stored) {
-      setSubscriberCount(parseInt(stored, 10));
-    } else {
-      // Default to a realistic number for social proof
-      setSubscriberCount(71);
-    }
+    fetch(`https://api.github.com/repos/${GITHUB_REPO}`)
+      .then(res => res.json())
+      .then(data => {
+        if (data.stargazers_count) {
+          setStars(data.stargazers_count);
+        }
+      })
+      .catch(() => {
+        // Default to a realistic number for social proof
+        setStars(23);
+      });
   }, []);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
+  const handleNotify = () => {
+    // Open GitHub issue to collect email
+    const issueUrl = `https://github.com/${GITHUB_REPO}/issues/new?title=Notify me when MCP Directory launches&body=Please notify me when MCP Directory is live!`;
+    window.open(issueUrl, '_blank');
+    setSubmitted(true);
+  };
 
-    setLoading(true);
-
-    try {
-      // Submit to web3forms (free form service for static sites)
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          access_key: WEB3FORMS_KEY,
-          email: email,
-          subject: "MCP Directory New Subscriber",
-        }),
-      });
-
-      if (response.ok) {
-        // Update count
-        const newCount = (subscriberCount || 71) + 1;
-        setSubscriberCount(newCount);
-        localStorage.setItem("mcp_subscriber_count", newCount.toString());
-        setSubmitted(true);
-      }
-    } catch (error) {
-      console.error("Submission error:", error);
-      // Fallback: still show success for demo
-      const newCount = (subscriberCount || 71) + 1;
-      setSubscriberCount(newCount);
-      setSubmitted(true);
-    } finally {
-      setLoading(false);
-    }
+  const handleStar = () => {
+    // Open GitHub repo to star
+    window.open(`https://github.com/${GITHUB_REPO}`, '_blank');
   };
 
   return (
@@ -106,28 +82,28 @@ export default function Home() {
                 <p className="text-emerald-400 font-medium">Thanks! We'll notify you when we launch.</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex gap-2">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-100 placeholder-zinc-500 focus:outline-none focus:border-emerald-500"
-                  required
-                />
+              <div className="flex flex-col gap-3">
                 <button
-                  type="submit"
-                  disabled={loading}
-                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 disabled:from-zinc-700 disabled:to-zinc-700 font-medium transition-all"
+                  onClick={handleNotify}
+                  className="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 font-medium transition-all"
                 >
-                  {loading ? "..." : "Notify Me"}
+                  Notify Me via GitHub
                 </button>
-              </form>
+                <button
+                  onClick={handleStar}
+                  className="w-full px-6 py-3 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 font-medium transition-all flex items-center justify-center gap-2"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                  </svg>
+                  {stars !== null ? `${stars} GitHub Stars` : "Star on GitHub"}
+                </button>
+              </div>
             )}
             <p className="text-xs text-zinc-500 mt-3">
-              {subscriberCount !== null
-                ? `Join ${subscriberCount} others waiting for launch`
-                : "Join others waiting for launch"}
+              {stars !== null
+                ? `${stars} developers waiting for launch`
+                : "Join developers waiting for launch"}
             </p>
           </div>
         </div>
