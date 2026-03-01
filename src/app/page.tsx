@@ -61,6 +61,14 @@ function ToolCard({ tool, onCopy }: { tool: MCPTool; onCopy: (cmd: string) => vo
   );
 }
 
+function ShareIcon() {
+  return (
+    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M18.16 4.41a.75.75 0 0 0-1.04-.17l-3.87 2.16-1.76-1.73a.75.75 0 0 0-1.06 1.06l2.47 2.42c.3.3.78.3 1.08 0l6.01-6.01a.75.75 0 0 0-1.06-1.06l-.74.72a.75.75 0 0 0 .25 1.26.75.75 0 0 0 .25-.25L18.4 4.67a.75.75 0 0 0-.24-.26zM5.84 19.59l-3.87-2.16a.75.75 0 0 0-1.04.17l-.25.25a.75.75 0 0 0 .25 1.26.75.75 0 0 0 .25.25l3.87 2.16 1.76 1.73a.75.75 0 0 0 1.06-1.06l-2.47-2.42a.75.75 0 0 0-1.06 0l-6.01 6.01a.75.75 0 1 0 1.06 1.06l6.01-6.01a.75.75 0 0 0 0-1.06z"/>
+    </svg>
+  );
+}
+
 export default function Home() {
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -114,6 +122,16 @@ export default function Home() {
               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
             </svg>
             <span className="text-sm">Star</span>
+          </a>
+          <a
+            href={`https://twitter.com/intent/tweet?text=${encodeURIComponent("🚀 Just discovered MCP Directory - 40+ curated MCP tools for AI workflows! Check it out:")}&url=${encodeURIComponent("https://opesli124.github.io/mcp-directory/")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-800 hover:border-zinc-700 transition-colors text-[#1DA1F2]"
+            aria-label="Share on Twitter"
+          >
+            <ShareIcon />
+            <span className="text-sm">Share</span>
           </a>
         </div>
       </header>

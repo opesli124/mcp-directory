@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://opesli124.github.io/mcp-directory/sitemap.xml

@@ -251,6 +251,143 @@ export const mcpTools: MCPTool[] = [
     language: "Go",
     stars: 3800,
     url: "https://github.com/grafana/mcp-server"
+  },
+  {
+    id: "26",
+    name: "Notion",
+    description: "Official Notion MCP server for page operations, databases, and workspace integration.",
+    category: "Productivity",
+    language: "TypeScript",
+    stars: 12500,
+    url: "https://github.com/makenotion/notion-mcp-server",
+    npm: "@notionhq/notion-mcp-server"
+  },
+  {
+    id: "27",
+    name: "Linear",
+    description: "Issue tracking and project management with Linear API integration.",
+    category: "Developer Tools",
+    language: "TypeScript",
+    stars: 8900,
+    url: "https://github.com/linear/mcp-server-linear"
+  },
+  {
+    id: "28",
+    name: "Google Drive",
+    description: "Access and manage files in Google Drive. Read, write, and organize files.",
+    category: "Cloud",
+    language: "TypeScript",
+    stars: 4200,
+    url: "https://github.com/googlesamples/mcp-server-google-drive"
+  },
+  {
+    id: "29",
+    name: "Supabase",
+    description: "Database operations with Supabase. Query tables, manage data, and run Edge Functions.",
+    category: "Database",
+    language: "TypeScript",
+    stars: 7800,
+    url: "https://github.com/supabase/mcp-server-supabase"
+  },
+  {
+    id: "30",
+    name: "Ollama",
+    description: "Local LLM inference with Ollama. Run AI models locally on your machine.",
+    category: "AI",
+    language: "TypeScript",
+    stars: 15600,
+    url: "https://github.com/ollama/ollama",
+    npm: "@modelcontextprotocol/server-ollama"
+  },
+  {
+    id: "31",
+    name: "Neon",
+    description: "Serverless PostgreSQL with Neon. Branching databases for development.",
+    category: "Database",
+    language: "TypeScript",
+    stars: 5100,
+    url: "https://github.com/neondatabase/mcp-server-neon"
+  },
+  {
+    id: "32",
+    name: "Qdrant",
+    description: "Vector similarity search with Qdrant. Build AI applications with semantic search.",
+    category: "AI",
+    language: "Python",
+    stars: 6800,
+    url: "https://github.com/qdrant/mcp-server-qdrant"
+  },
+  {
+    id: "33",
+    name: "Weaviate",
+    description: "Vector database with Weaviate. Semantic search and AI-powered queries.",
+    category: "AI",
+    language: "Python",
+    stars: 5900,
+    url: "https://github.com/weaviate/mcp-server-weaviate"
+  },
+  {
+    id: "34",
+    name: "Redis",
+    description: "In-memory data store with Redis. Caching and key-value operations.",
+    category: "Database",
+    language: "TypeScript",
+    stars: 3400,
+    url: "https://github.com/redis/mcp-server-redis"
+  },
+  {
+    id: "35",
+    name: "Airtable",
+    description: "Airtable database integration. Manage bases, tables, and records.",
+    category: "Database",
+    language: "TypeScript",
+    stars: 4100,
+    url: "https://github.com/Airtable/mcp-server-airtable"
+  },
+  {
+    id: "36",
+    name: "HubSpot",
+    description: "CRM operations with HubSpot. Manage contacts, deals, and marketing automation.",
+    category: "Communication",
+    language: "TypeScript",
+    stars: 2800,
+    url: "https://github.com/HubSpot/mcp-server-hubspot"
+  },
+  {
+    id: "37",
+    name: "Pinecone",
+    description: "Vector database with Pinecone. Scalable semantic search for AI applications.",
+    category: "AI",
+    language: "Python",
+    stars: 4200,
+    url: "https://github.com/pinecone-io/mcp-pinecone"
+  },
+  {
+    id: "38",
+    name: "Raycast",
+    description: "MacOS launcher and window management. Control your Mac with AI assistance.",
+    category: "System",
+    language: "TypeScript",
+    stars: 11200,
+    url: "https://github.com/raycast/mcp-server-raycast"
+  },
+  {
+    id: "39",
+    name: "Brave Search",
+    description: "Web search via Brave API. Get up-to-date information for AI agents.",
+    category: "Search",
+    language: "TypeScript",
+    stars: 6500,
+    url: "https://github.com/modelcontextprotocol/server-brave-search"
+  },
+  {
+    id: "40",
+    name: "Everart",
+    description: "Image generation and transformation. AI-powered image processing.",
+    category: "AI",
+    language: "TypeScript",
+    stars: 2800,
+    url: "https://github.com/modelcontextprotocol/servers"
   }
 ];
 
@@ -269,7 +406,8 @@ export const categories = [
   "Communication",
   "AI",
   "Location",
-  "DevOps"
+  "DevOps",
+  "Productivity"
 ];
 
 export const languages = ["All", "TypeScript", "Python", "Go", "JavaScript", "Java", "Rust"];
