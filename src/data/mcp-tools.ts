@@ -1,0 +1,275 @@
+// MCP Tools Data - Curated list of popular MCP servers
+export interface MCPTool {
+  id: string;
+  name: string;
+  description: string;
+  category: string;
+  language: string;
+  stars: number;
+  url: string;
+  npm?: string;
+}
+
+export const mcpTools: MCPTool[] = [
+  {
+    id: "1",
+    name: "Context7",
+    description: "Up-to-date code documentation for LLMs and AI code editors. Get relevant context from your codebase.",
+    category: "Code",
+    language: "TypeScript",
+    stars: 47328,
+    url: "https://github.com/upstash/context7",
+    npm: "@context7/mcp-server"
+  },
+  {
+    id: "2",
+    name: "Playwright",
+    description: "Official Playwright MCP server for browser automation. Control browsers with AI agents.",
+    category: "Browser",
+    language: "TypeScript",
+    stars: 27941,
+    url: "https://github.com/microsoft/playwright-mcp",
+    npm: "@modelcontextprotocol/server-playwright"
+  },
+  {
+    id: "3",
+    name: "GitHub MCP Server",
+    description: "Official GitHub MCP Server for repository management, issues, PRs, and more.",
+    category: "Developer Tools",
+    language: "Go",
+    stars: 27350,
+    url: "https://github.com/github/github-mcp-server"
+  },
+  {
+    id: "4",
+    name: "FastMCP",
+    description: "The fast, Pythonic way to build MCP servers and clients. Build production-ready MCP tools in minutes.",
+    category: "Framework",
+    language: "Python",
+    stars: 23266,
+    url: "https://github.com/PrefectHQ/fastmcp",
+    npm: "fastmcp"
+  },
+  {
+    id: "5",
+    name: "Figma Context MCP",
+    description: "MCP server to provide Figma layout information to AI coding agents.",
+    category: "Design",
+    language: "TypeScript",
+    stars: 13318,
+    url: "https://github.com/GLips/Figma-Context-MCP",
+    npm: "figma-mcp"
+  },
+  {
+    id: "6",
+    name: "AWS MCP",
+    description: "Official MCP Servers for AWS. Manage AWS resources with AI agents.",
+    category: "Cloud",
+    language: "Python",
+    stars: 8288,
+    url: "https://github.com/awslabs/mcp"
+  },
+  {
+    id: "7",
+    name: "MCP Inspector",
+    description: "Visual testing tool for MCP servers. Debug and test your MCP connections.",
+    category: "Developer Tools",
+    language: "TypeScript",
+    stars: 8855,
+    url: "https://github.com/modelcontextprotocol/inspector",
+    npm: "@modelcontextprotocol/inspector"
+  },
+  {
+    id: "8",
+    name: "GitMCP",
+    description: "Remote MCP server to reduce code hallucinations. Better context for AI code reviews.",
+    category: "Code",
+    language: "TypeScript",
+    stars: 7672,
+    url: "https://github.com/idosal/git-mcp"
+  },
+  {
+    id: "9",
+    name: "Firecrawl MCP Server",
+    description: "Official Firecrawl MCP Server for web scraping. Turn websites into LLM-ready data.",
+    category: "Data",
+    language: "JavaScript",
+    stars: 5631,
+    url: "https://github.com/firecrawl/firecrawl-mcp-server",
+    npm: "firecrawl-mcp-server"
+  },
+  {
+    id: "10",
+    name: "Desktop Commander MCP",
+    description: "MCP server for terminal control and file system operations.",
+    category: "System",
+    language: "TypeScript",
+    stars: 5569,
+    url: "https://github.com/wonderwhy-er/DesktopCommanderMCP"
+  },
+  {
+    id: "11",
+    name: "Filesystem",
+    description: "Official MCP server for filesystem access and operations.",
+    category: "System",
+    language: "TypeScript",
+    stars: 15000,
+    url: "https://github.com/modelcontextprotocol/servers",
+    npm: "@modelcontextprotocol/server-filesystem"
+  },
+  {
+    id: "12",
+    name: "Memory",
+    description: "Knowledge graph memory server for persistent context across conversations.",
+    category: "AI",
+    language: "TypeScript",
+    stars: 12000,
+    url: "https://github.com/modelcontextprotocol/servers",
+    npm: "@modelcontextprotocol/server-memory"
+  },
+  {
+    id: "13",
+    name: "Sequential Thinking",
+    description: "Problem solving through structured thinking. Chain thoughts for better reasoning.",
+    category: "AI",
+    language: "TypeScript",
+    stars: 8000,
+    url: "https://github.com/modelcontextprotocol/servers",
+    npm: "@modelcontextprotocol/server-sequential-thinking"
+  },
+  {
+    id: "14",
+    name: "Brave Search",
+    description: "Web search via Brave API. Get up-to-date information for AI agents.",
+    category: "Search",
+    language: "TypeScript",
+    stars: 6500,
+    url: "https://github.com/modelcontextprotocol/servers",
+    npm: "@modelcontextprotocol/server-brave-search"
+  },
+  {
+    id: "15",
+    name: "Puppeteer",
+    description: "Browser automation using Puppeteer. Alternative to Playwright for Chrome control.",
+    category: "Browser",
+    language: "TypeScript",
+    stars: 5500,
+    url: "https://github.com/modelcontextprotocol/servers",
+    npm: "@modelcontextprotocol/server-puppeteer"
+  },
+  {
+    id: "16",
+    name: "Slack",
+    description: "Send messages and manage channels in Slack. AI-powered team communication.",
+    category: "Communication",
+    language: "TypeScript",
+    stars: 4800,
+    url: "https://github.com/modelcontextprotocol/servers",
+    npm: "@modelcontextprotocol/server-slack"
+  },
+  {
+    id: "17",
+    name: "PostgreSQL",
+    description: "Database operations with PostgreSQL. Query and manage your data.",
+    category: "Database",
+    language: "TypeScript",
+    stars: 7200,
+    url: "https://github.com/modelcontextprotocol/servers",
+    npm: "@modelcontextprotocol/server-postgres"
+  },
+  {
+    id: "18",
+    name: "SQLite",
+    description: "Lightweight database operations with SQLite. Perfect for local development.",
+    category: "Database",
+    language: "TypeScript",
+    stars: 5100,
+    url: "https://github.com/modelcontextprotocol/servers",
+    npm: "@modelcontextprotocol/server-sqlite"
+  },
+  {
+    id: "19",
+    name: "Google Maps",
+    description: "Location services and directions. Integrate maps into your AI workflows.",
+    category: "Location",
+    language: "TypeScript",
+    stars: 3200,
+    url: "https://github.com/modelcontextprotocol/servers",
+    npm: "@modelcontextprotocol/server-google-maps"
+  },
+  {
+    id: "20",
+    name: "GitLab",
+    description: "GitLab project management and CI/CD. Manage repos and pipelines.",
+    category: "Developer Tools",
+    language: "TypeScript",
+    stars: 4100,
+    url: "https://github.com/modelcontextprotocol/servers"
+  },
+  {
+    id: "21",
+    name: "MCP Use",
+    description: "Fullstack MCP framework for building MCP Apps and Servers.",
+    category: "Framework",
+    language: "TypeScript",
+    stars: 9334,
+    url: "https://github.com/mcp-use/mcp-use",
+    npm: "mcp-use"
+  },
+  {
+    id: "22",
+    name: "Everart",
+    description: "Image generation and transformation. AI-powered image processing.",
+    category: "AI",
+    language: "TypeScript",
+    stars: 2800,
+    url: "https://github.com/modelcontextprotocol/servers"
+  },
+  {
+    id: "23",
+    name: "Sentry",
+    description: "Error monitoring and performance tracking. Get insights from your apps.",
+    category: "Developer Tools",
+    language: "TypeScript",
+    stars: 3100,
+    url: "https://github.com/modelcontextprotocol/servers"
+  },
+  {
+    id: "24",
+    name: "AWS KB Retrieval",
+    description: "Knowledge base retrieval from AWS. Search your documentation.",
+    category: "Cloud",
+    language: "Python",
+    stars: 4500,
+    url: "https://github.com/awslabs/mcp"
+  },
+  {
+    id: "25",
+    name: "Grafana",
+    description: "Observability and monitoring. Query metrics and dashboards.",
+    category: "DevOps",
+    language: "Go",
+    stars: 3800,
+    url: "https://github.com/grafana/mcp-server"
+  }
+];
+
+export const categories = [
+  "All",
+  "Code",
+  "Browser",
+  "Developer Tools",
+  "Framework",
+  "Design",
+  "Cloud",
+  "System",
+  "Data",
+  "Search",
+  "Database",
+  "Communication",
+  "AI",
+  "Location",
+  "DevOps"
+];
+
+export const languages = ["All", "TypeScript", "Python", "Go", "JavaScript", "Java", "Rust"];
