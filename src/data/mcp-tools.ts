@@ -388,6 +388,15 @@ export const mcpTools: MCPTool[] = [
     language: "TypeScript",
     stars: 2800,
     url: "https://github.com/modelcontextprotocol/servers"
+  },
+  {
+    id: "41",
+    name: "Xquik MCP Server",
+    description: "X/Twitter data and automation platform with search, profile reads, follower exports, media tools, webhooks, and writes.",
+    category: "Communication",
+    language: "JavaScript",
+    stars: 128,
+    url: "https://github.com/Xquik-dev/x-twitter-scraper"
   }
 ];
 
